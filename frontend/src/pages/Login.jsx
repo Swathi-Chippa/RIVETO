@@ -212,7 +212,7 @@ function Login() {
       <div className="fixed inset-0 z-50 overflow-hidden bg-[#0B0F1A] flex items-center justify-center">
 
         <div
-          className="absolute w-[500px] h-[500px] rounded-full"
+          className="absolute top-1/2 left-1/2 w-[500px] h-[500px] rounded-full -translate-x-1/2 -translate-y-1/2"
           style={{
             background:
               "radial-gradient(circle, rgba(37,99,235,0.35), transparent 70%)",
@@ -237,12 +237,16 @@ function Login() {
           </h1>
 
           <div className="relative w-16 h-16 mb-6">
-            <div className="absolute inset-0 rounded-full border-4 border-cyan-500/20"></div>
+            <div aria-hidden="true" className="absolute inset-0 rounded-full border-4 border-cyan-500/20"></div>
 
             <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-cyan-400 border-r-blue-500 animate-spin"></div>
           </div>
 
-          <p className="text-cyan-100/80 text-lg font-medium tracking-wide">
+          <p
+            role="status"
+            aria-live="polite"
+            className="text-cyan-100/80 text-lg font-medium tracking-wide"
+          >
             Preparing your experience...
           </p>
 

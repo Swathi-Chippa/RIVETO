@@ -2,7 +2,7 @@ const validateRequest = (schema) => {
   return (req, res, next) => {
     // Check the body against the schema
     // abortEarly: false = return ALL errors, not just the first one
-    const { error } = schema.validate(req.body, { abortEarly: false });
+    const { error } = schema.validate(req.body, { abortEarly: false,stripUnknown: true });
 
     if (error) {
       // Extract just the message strings from the error details
